@@ -50,7 +50,6 @@ let value = 5
 State.Set('myKey', value);
 
 // Later on, you can retrieve the value
-
 let retrievedValue = State.Get('myKey');
 
 // Will log the value of 'myKey', in this case 5
