@@ -1,8 +1,8 @@
 ---
-title: Folder
+title: Modules
 type: docs
 prev: docs/first-page
-next: docs/folder/leaf
+next: docs/folder/console
 sidebar:
   open: true
 ---
