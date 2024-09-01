@@ -1,7 +1,7 @@
 ---
 title: Window
 type: docs
-prev: docs/folder/uibuilder
+prev: docs/module/uibuilder
 ---
 
 Window provides a way to get the currently focused window. It also has a way to get notified when the currently focused window changes.

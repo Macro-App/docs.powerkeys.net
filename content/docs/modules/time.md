@@ -1,8 +1,8 @@
 ---
 title: Time
 type: docs
-prev: docs/folder/state
-next: docs/folder/uibuilder
+prev: docs/module/state
+next: docs/module/uibuilder
 ---
 
 Time is a module that allows you to delay or call a function after a certain amount of time.

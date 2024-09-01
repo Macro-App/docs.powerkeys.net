@@ -3,7 +3,9 @@ title: PowerKeys
 toc: false
 ---
 
-This is the landing page.
+Welcome to the PowerKeys documentation!
+
+PowerKeys is a powerful automation tool that allows you to automate tasks in any application.
 
 ## Explore
 

@@ -1,8 +1,8 @@
 ---
 title: Console
 type: docs
-prev: docs/folder/
-next: docs/folder/keyboard
+prev: docs/module/
+next: docs/module/keyboard
 ---
 
 The console provides a way to log to the app window. It is useful for debugging and for providing feedback to the user.

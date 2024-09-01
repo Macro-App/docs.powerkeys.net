@@ -1,8 +1,8 @@
 ---
 title: State
 type: docs
-prev: docs/folder/mouse
-next: docs/folder/time
+prev: docs/module/mouse
+next: docs/module/time
 ---
 
 The State module is a key value store that can be used to store and retrieve data. It is useful to store data across script executions.
@@ -42,6 +42,10 @@ Parameters:
 - `value` (any): The value to set in the state.
 
 `value` can be any type of data, including objects and arrays.
+
+{{< callout type="warning" >}}
+`value` must be JSON serializable.
+{{< /callout >}}
 
 ```javascript
 // Will set the key 'myKey' to the value 'myValue'

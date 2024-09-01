@@ -1,18 +1,6 @@
 ---
 title: Documentation
-next: first-page
+next: docs/module/console
 ---
 
-This is a demo of the theme's documentation layout.
-
-## Hello, World!
-
-```go {filename="main.go"}
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("Hello, World!")
-}
-```
+Here you can learn about the PowerKeys powerful scripting interface.
