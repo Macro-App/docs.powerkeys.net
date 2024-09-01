@@ -4,20 +4,35 @@ type: docs
 prev: docs/folder/uibuilder
 ---
 
-The console provides a way to log to the app window. It is useful for debugging and for providing feedback to the user.
+Window provides a way to get the currently focused window. It also has a way to get notified when the currently focused window changes.
 
-## Log
+## CurrentFocus
+
+Returns the full path of the currently focused window.
+
+Returns:
+
+- `string` - The full path of the currently focused window.
+
 ```javascript
-Console.Log('Hello, world!');
+const windowPath = Window.CurrentFocus;
+
+// Example output if the focused window is notepad: "C:\Windows\System32\notepad.exe"
+Console.Log(windowPath);
 ```
 
+## OnFocusChange
 
-## Warn
-```javascript
-Console.Warn('Warning: This is a warning message.');
-```
+Registers a callback function to be called when the currently focused window changes.
 
-## Error
+Parameters:
+
+- `callback` (function) - The function to be called when the currently focused window changes.
+  - params:
+    - `windowPath` (string) - The full path of the newly focused window.
+
 ```javascript
-Console.Error('Error: This is an error message.');
+Window.OnFocusChange(function (windowPath) {
+  Console.Log(windowPath); // Will log the full path of the newly focused window
+});
 ```

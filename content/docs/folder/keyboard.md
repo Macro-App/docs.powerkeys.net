@@ -13,10 +13,10 @@ Keyboard provides a way to send keys to the system. It also provides ways to lis
 
 Parameters:
 
-- `key`: string _required_
+- `key` (string) - The key to send to the system.
   - example: `'A'`
-- `pressTime`: number _optional_
-  - example: `50`
+- `time` (number?) - The amount of time to hold the key down for.
+  - example: `1000`
   - default: `50`
 
 ```javascript
@@ -30,7 +30,7 @@ Keyboard.SendKey("A", 1000);
 
 Parameters:
 
-- `key`: string _required_
+- `key` (string) - The key to send to the system.
   - example: `'A'`
 
 ```javascript
@@ -44,7 +44,7 @@ Keyboard.SendKeyDown("A");
 
 Parameters:
 
-- `key`: string _required_
+- `key` (string) - The key to release on the system.
   - example: `'A'`
 
 ```javascript
@@ -58,7 +58,7 @@ Keyboard.SendKeyUp("A");
 
 Parameters:
 
-- `key`: string _required_
+- `key` (string) - The key to block from being sent to the system.
   - example: `'A'`
 
 ```javascript
@@ -72,7 +72,7 @@ Keyboard.BlockKey("A");
 
 Parameters:
 
-- `key`: string _required_
+- `key` (string) - The key to unblock from being sent to the system.
   - example: `'A'`
 
 ```javascript
@@ -86,8 +86,9 @@ Keyboard.UnblockKey("A");
 
 Parameters:
 
-- `callback`: function _required_
-  - params: `key`, the key that was pressed
+- `callback` (function) - The function to be called when the key is pressed.
+  - params:
+    - `key` (string): the key that was pressed
 
 ```javascript
 // Will call the function when the 'A' key is pressed
@@ -102,8 +103,9 @@ Keyboard.OnKeyDown(function (key) {
 
 Parameters:
 
-- `callback`: function _required_
-  - params: `key`, the key that was released
+- `callback` (function) - The function to be called when the key is released.
+  - params:
+    - `key` (string): the key that was released
 
 ```javascript
 // Will call the function when the 'A' key is released
@@ -118,9 +120,10 @@ Keyboard.OnKeyUp(function (key) {
 
 Parameters:
 
-- `callback`: function _required_
-  - params: `key`, the key that was pressed
-  - params: `down`, whether the key was pressed or released
+- `callback` (function) - The function to be called when the key is pressed.
+  - params:
+    - `key` (string): the key that was pressed
+    - `down` (boolean): whether the key was pressed down or released
 
 ```javascript
 // Will call the function when the 'A' key is pressed

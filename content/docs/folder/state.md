@@ -21,7 +21,7 @@ Parameters:
 
 Returns:
 
-- `any`: The value of the key in the state.
+- The value of the key in the state, or `null` if the key does not exist.
 
 ```javascript
 // Will get the value of the key 'myKey'
