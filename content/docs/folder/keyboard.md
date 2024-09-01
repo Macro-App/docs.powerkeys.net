@@ -2,6 +2,7 @@
 title: Keyboard
 type: docs
 prev: docs/folder/console
+next: docs/folder/mouse
 ---
 
 Keyboard provides a way to send keys to the system. It also provides ways to listen for key events, you can also block and unblock keys from being sent to the system.
