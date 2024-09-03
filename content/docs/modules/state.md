@@ -5,13 +5,15 @@ prev: docs/module/mouse
 next: docs/module/time
 ---
 
-The State module is a key value store that can be used to store and retrieve data. It is useful to store data across script executions.
+The `State` module is a key-value store that can be used to store and retrieve data. It is particularly useful for persisting data across script executions.
 
-State is synced to the cloud every 5 minutes and is available across all devices.
+The state is synced to the cloud every 5 seconds and is accessible across all devices.
+
+You can access the `State` module via the `@powerkeys/v1` module.
 
 ## Get
 
-`Get` takes 1 parameter, the key to retrieve from the state.
+`Get` retrieves the value associated with a specified key from the state.
 
 If the key does not exist, it will return `null`.
 
@@ -23,7 +25,10 @@ Returns:
 
 - The value of the key in the state, or `null` if the key does not exist.
 
+Example:
 ```javascript
+import { State } from '@powerkeys/v1';
+
 // Will get the value of the key 'myKey'
 let value = State.Get('myKey');
 
@@ -31,26 +36,25 @@ let value = State.Get('myKey');
 Console.Log(value);
 ```
 
-
 ## Set
 
-`Set` takes 2 parameters, the key to set in the state, and the value to set.
+`Set` assigns a value to a specified key in the state.
 
 Parameters:
 
 - `key` (string): The key to set in the state.
 - `value` (any): The value to set in the state.
 
-`value` can be any type of data, including objects and arrays.
+`value` can be of any type, including objects and arrays.
 
-{{< callout type="warning" >}}
-`value` must be JSON serializable.
-{{< /callout >}}
+> **Warning:** `value` must be JSON serializable.
 
+Example:
 ```javascript
-// Will set the key 'myKey' to the value 'myValue'
-let value = 5
+import { State } from '@powerkeys/v1';
 
+// Will set the key 'myKey' to the value '5'
+let value = 5;
 State.Set('myKey', value);
 
 // Later on, you can retrieve the value
@@ -62,17 +66,20 @@ Console.Log(retrievedValue);
 
 ## Has
 
-`Has` takes 1 parameter, the key to check if it exists in the state.
+`Has` checks whether a specified key exists in the state.
 
 Parameters:
 
-- `key` (string): The key to check if it exists in the state.
+- `key` (string): The key to check in the state.
 
 Returns:
 
 - `boolean`: Whether the key exists in the state.
 
+Example:
 ```javascript
+import { State } from '@powerkeys/v1';
+
 // Will check if the key 'myKey' exists in the state
 const exists = State.Has('myKey');
 
@@ -85,13 +92,16 @@ if (exists) {
 
 ## Remove
 
-`Remove` takes 1 parameter, the key to remove from the state.
+`Remove` deletes a specified key from the state.
 
 Parameters:
 
 - `key` (string): The key to remove from the state.
 
+Example:
 ```javascript
+import { State } from '@powerkeys/v1';
+
 // Will remove the key 'myKey' from the state
 State.Remove('myKey');
 

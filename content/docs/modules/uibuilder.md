@@ -7,12 +7,15 @@ next: docs/module/othermodule
 
 The `UIBuilder` module allows you to dynamically create and configure UI that users can use to interact with your script.
 
-Every script can have a `build_ui` function that is called when the script is loaded. This function can be used to create the UI elements that will be displayed to the user.
+You can access the `UIBuilder` at any point during the script execution, allowing you to update the UI dynamically as needed. The `UIBuilder` instance can be accessed from the `UI` property of the `@powerkeys/v1` module.
 
 ```javascript
-function build_ui(builder) {
-  // Do things with the builder
-}
+import { UI } from '@powerkeys/v1';
+
+// Example usage
+UI.AddButton("Click Me", () => {
+  Console.Log("Button clicked!");
+});
 ```
 
 ## Methods
@@ -28,12 +31,12 @@ Parameters:
 
 Example:
 ```javascript
-function build_ui(builder) {
-  // Adds a button with the text "Click Me"
-  builder.AddButton("Click Me", () => {
-    Console.Log("Button clicked!");
-  });
-}
+import { UI } from '@powerkeys/v1';
+
+// Adds a button with the text "Click Me"
+UI.AddButton("Click Me", () => {
+  Console.Log("Button clicked!");
+});
 ```
 
 ### AddSlider
@@ -54,11 +57,9 @@ Returns:
 
 Example:
 ```javascript
-let slider = null;
-function build_ui(builder) {
-  // Adds a slider with a range from 0 to 100
-  let slider = builder.AddSlider("volume_slider", 0, 100, "Volume");
-}
+import { UI } from '@powerkeys/v1';
+
+let slider = UI.AddSlider("volume_slider", 0, 100, "Volume");
 
 // Later in the script
 const sliderValue = slider.GetValue();
@@ -81,11 +82,9 @@ Returns:
 
 Example:
 ```javascript
-let comboBox = null;
-function build_ui(builder) {
-  // Adds a combo box with three options
-  comboBox = builder.AddComboBox("color_combo", ["Red", "Green", "Blue"], "Color");
-}
+import { UI } from '@powerkeys/v1';
+
+let comboBox = UI.AddComboBox("color_combo", ["Red", Green", "Blue"], "Color");
 
 // Later in the script
 const selectedColor = comboBox.GetSelectedValue();
@@ -107,11 +106,9 @@ Returns:
 
 Example:
 ```javascript
-let checkBox = null;
-function build_ui(builder) {
-  // Adds a checkbox with the text "Enable Feature"
-  checkBox = builder.AddCheckBox("feature_checkbox", "Enable Feature", "Feature");
-}
+import { UI } from '@powerkeys/v1';
+
+let checkBox = UI.AddCheckBox("feature_checkbox", "Enable Feature", "Feature");
 
 // Later in the script
 const isEnabled = checkBox.IsChecked();
@@ -127,14 +124,13 @@ Returns:
 
 Example:
 ```javascript
-function build_ui(builder) {
-  // Creates a row and adds a button and a slider to it
-  let row = builder.AddRow();
-  row.AddButton("Click Me", () => {
-    Console.Log("Button clicked!");
-  });
-  row.AddSlider("volume_slider", 0, 100, "Volume");
-}
+import { UI } from '@powerkeys/v1';
+
+let row = UI.AddRow();
+row.AddButton("Click Me", () => {
+  Console.Log("Button clicked!");
+});
+row.AddSlider("volume_slider", 0, 100, "Volume");
 ```
 
 ### AddColumn
@@ -147,14 +143,13 @@ Returns:
 
 Example:
 ```javascript
-function build_ui(builder) {
-  // Creates a column and adds a button and a slider to it
-  let column = builder.AddColumn();
-  column.AddButton("Click Me", () => {
-    Console.Log("Button clicked!");
-  });
-  column.AddSlider("volume_slider", 0, 100, "Volume");
-}
+import { UI } from '@powerkeys/v1';
+
+let column = UI.AddColumn();
+column.AddButton("Click Me", () => {
+  Console.Log("Button clicked!");
+});
+column.AddSlider("volume_slider", 0, 100, "Volume");
 ```
 
 ## Wrapper Classes
